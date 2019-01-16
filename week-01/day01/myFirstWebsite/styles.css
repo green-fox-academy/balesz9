@@ -1,0 +1,61 @@
+body {
+    
+  background-image: url("assets/background.png");
+  font-family: Consolas;
+  margin: 0;
+  
+}
+.header {
+ 
+  background-color: #333333;
+  padding: 5px 10%;
+}
+
+.header a {
+  float: left;
+  color: #ff0099;
+  text-align: center;
+  padding-right: 24px;
+  font-size: 14px; 
+  line-height: 36px;
+}
+
+.header-right {
+  float: right;
+}
+
+h1 {
+    font-size: 45px;
+    padding-top: 35px;
+}
+h2 {
+    color: #ff0099;
+}
+
+.intro {
+    padding: 0% 10%;
+}
+
+#separator {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.tech-wiki {
+    font-size: 13px;
+    padding: 0% 10%;
+    line-height: 2;
+}
+
+#tech-wiki-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align:center;
+    line-height: normal;
+}
+p.title {
+    font-size: 22px;
+    font-family: 'Staatliches', cursive;
+    line-height: normal;
+}
