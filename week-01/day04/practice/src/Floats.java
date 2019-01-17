@@ -9,4 +9,6 @@ public class Floats {
         System.out.println(.5); // Prints 0.5
         System.out.println(5.); // Prints 5.0
     }
+
+
 }
