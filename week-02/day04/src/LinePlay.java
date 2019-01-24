@@ -8,16 +8,12 @@ public class LinePlay {
     public static void mainDraw(Graphics graphics) {
 
         int vonal = 13;
-        graphics.setColor(Color.GREEN);
         for (int i = 0 ; i < vonal; i++) {
+            graphics.setColor(Color.GREEN);
             graphics.drawLine(0,(HEIGHT/vonal)*i,(WIDTH/vonal)*(i+1), HEIGHT);
-        }
-        graphics.setColor(Color.MAGENTA);
-        for (int i = 0 ; i < vonal; i++) {
+            graphics.setColor(Color.MAGENTA);
             graphics.drawLine((WIDTH/vonal)*i,0,WIDTH, (HEIGHT/vonal)*(i+1));
         }
-
-
     }
 
     // Don't touch the code below

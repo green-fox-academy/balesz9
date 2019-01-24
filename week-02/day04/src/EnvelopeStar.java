@@ -1,25 +1,21 @@
 import javax.swing.*;
+
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LinePlayQuarters {
+public class EnvelopeStar {
     public static void mainDraw(Graphics graphics) {
 
-        int vonal = 13;
-        int split = 16;
-        int height2 = HEIGHT / split * 2;
-        int width2 = WIDTH / split * 2;
-        for (int k = 0; k < split / 2; k++) {
-            for (int j = 0; j < split / 2; j++) {
-                for (int i = 0; i < vonal; i++) {
-                    graphics.setColor(Color.GREEN);
-                    graphics.drawLine((width2 * j), (height2 / vonal) * i + height2 * k, (width2 / vonal) * (i + 1) + width2 * j, height2 * (k + 1));
-                    graphics.setColor(Color.MAGENTA);
-                    graphics.drawLine((width2 / vonal) * i + width2 * j, height2 * k, width2 * (j + 1), (height2 / vonal) * (i + 1) + height2 * k);
-                }
-            }
+        int vonal = 30;
+        graphics.setColor(Color.GREEN);
+        for (int i = 0 ; i < vonal; i++) {
+            graphics.drawLine(WIDTH/2,(HEIGHT/2/vonal)*i,(WIDTH/2/vonal)*(i+1)+WIDTH/2, HEIGHT/2);
+            graphics.drawLine(WIDTH/2,(HEIGHT/2/vonal)*i, ((WIDTH/2)-(WIDTH/2/vonal)*(i+1)), HEIGHT/2);
+            graphics.drawLine(WIDTH/2,HEIGHT-(HEIGHT/2/vonal)*i,(WIDTH/2/vonal)*(i+1)+WIDTH/2, HEIGHT/2);
+            graphics.drawLine(WIDTH/2,HEIGHT-(HEIGHT/2/vonal)*i, ((WIDTH/2)-(WIDTH/2/vonal)*(i+1)), HEIGHT/2);
         }
+
     }
 
     // Don't touch the code below
