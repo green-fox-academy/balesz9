@@ -4,15 +4,17 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class RainbowBoxFunction {
+public class RainbowBoxFunction2 {
     public static void mainDraw(Graphics graphics) {
         // Create a square drawing function that takes 3 parameters:
         // The square size, the fill color, graphics
         // and draws a square of that size and color to the center of the canvas.
         // Create a loop that fills the canvas with rainbow colored squares.
-        for (int i= 1; i<(WIDTH/20); i++ ) {
-            Color newcolor = new Color(5*i, 20, 30);
-            RainbowSquare(((WIDTH/20-i)*20),newcolor, graphics);
+        // belerakni array-be és onnan meghívni a színeket
+        int[][] rainbow = new int [][]{{255, 0, 0},{255, 127, 0},{255, 255, 0},{0, 255, 0},{0, 0, 255},{139, 0, 255}};
+        for (int i= 0; i<6; i++ ) {
+            Color newcolor= new Color(rainbow[i][0],rainbow[i][1],rainbow[i][2] ) ;
+            RainbowSquare((WIDTH-i*(WIDTH/6)),newcolor ,graphics);
 
 
         }

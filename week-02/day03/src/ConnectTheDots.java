@@ -4,22 +4,20 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class RainbowBoxFunction {
+public class ConnectTheDots {
     public static void mainDraw(Graphics graphics) {
-        // Create a square drawing function that takes 3 parameters:
-        // The square size, the fill color, graphics
-        // and draws a square of that size and color to the center of the canvas.
-        // Create a loop that fills the canvas with rainbow colored squares.
-        for (int i= 1; i<(WIDTH/20); i++ ) {
-            Color newcolor = new Color(5*i, 20, 30);
-            RainbowSquare(((WIDTH/20-i)*20),newcolor, graphics);
+        // Create a function that takes 2 parameters:
+        // An array of {x, y} points and graphics
+        // and connects them with green lines.
+        // Connect these to get a box: {{10, 10}, {290,  10}, {290, 290}, {10, 290}}
+        // Connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
+        // {120, 100}, {85, 130}, {50, 100}}
 
 
-        }
+
     }
-    public static void RainbowSquare(int size, Color color, Graphics smg) {
-        smg.setColor(color);
-        smg.fillRect(WIDTH/2-size/2, HEIGHT/2-size/2, size, size);
+    public static void joiner(){
+
     }
 
     // Don't touch the code below

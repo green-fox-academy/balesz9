@@ -4,27 +4,28 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class RainbowBoxFunction {
+public class StarryNight {
     public static void mainDraw(Graphics graphics) {
-        // Create a square drawing function that takes 3 parameters:
-        // The square size, the fill color, graphics
-        // and draws a square of that size and color to the center of the canvas.
-        // Create a loop that fills the canvas with rainbow colored squares.
-        for (int i= 1; i<(WIDTH/20); i++ ) {
-            Color newcolor = new Color(5*i, 20, 30);
-            RainbowSquare(((WIDTH/20-i)*20),newcolor, graphics);
-
-
+        // Draw the night sky:
+        //  - The background should be black
+        //  - The stars can be small squares
+        //  - The stars should have random positions on the canvas
+        //  - The stars should have random color (some shade of grey)
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(0,0,WIDTH,HEIGHT);
+        for (int i = 0; i < 150; i++) {
+            graphics.setColor(new Color(211,211,211,150));
+            int a = (int)(Math.random()*WIDTH);
+            int b = (int)(Math.random()*HEIGHT);
+            graphics.fillRect(a,b,1,1);
         }
-    }
-    public static void RainbowSquare(int size, Color color, Graphics smg) {
-        smg.setColor(color);
-        smg.fillRect(WIDTH/2-size/2, HEIGHT/2-size/2, size, size);
+
+
     }
 
     // Don't touch the code below
-    static int WIDTH = 320;
-    static int HEIGHT = 320;
+    static int WIDTH = 1024;
+    static int HEIGHT = 768;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");

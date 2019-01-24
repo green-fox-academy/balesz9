@@ -12,11 +12,11 @@ public class CheckerBoard {
        for  (int j = 0; j<4; j++) {
         for (int i= 0; i <4; i++ ) {
             graphics.setColor(Color.WHITE);
-            graphics.fillRect(0 + (i * size * 2), 0+ (j * size * 2), size, size);
+            graphics.fillRect( (i * size * 2), (j * size * 2), size, size);
             graphics.fillRect(size + (i * size * 2), size+(j * size * 2), size, size);
             graphics.setColor(Color.BLACK);
-            graphics.fillRect(size + (i * size * 2), 0+(j * size * 2), size, size);
-            graphics.fillRect(0 + (i * size * 2), size+(j * size * 2), size, size);
+            graphics.fillRect(size + (i * size * 2), (j * size * 2), size, size);
+            graphics.fillRect((i * size * 2), size+(j * size * 2), size, size);
             }
         }
 

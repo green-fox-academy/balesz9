@@ -4,22 +4,27 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class RainbowBoxFunction {
+public class FunctionToCenter {
     public static void mainDraw(Graphics graphics) {
-        // Create a square drawing function that takes 3 parameters:
-        // The square size, the fill color, graphics
-        // and draws a square of that size and color to the center of the canvas.
-        // Create a loop that fills the canvas with rainbow colored squares.
-        for (int i= 1; i<(WIDTH/20); i++ ) {
-            Color newcolor = new Color(5*i, 20, 30);
-            RainbowSquare(((WIDTH/20-i)*20),newcolor, graphics);
+        // Create a line drawing function that takes 3 parameters:
+        // The x and y coordinates of the line's starting point and the graphics
+        // and draws a line from that point to the center of the canvas.
+        // Fill the canvas with lines from the edges, every 20 px, to the center.
 
+        for (int j = 0; j < HEIGHT/20; j++) {
+            CenterDrawer(j*20, 0, graphics);
+            CenterDrawer(j*20, HEIGHT, graphics);
+        }
+        for (int i= 0; i < HEIGHT/20+1; i++ ){
+            CenterDrawer(0, i*20, graphics);
+            CenterDrawer(WIDTH, i*20, graphics);
 
         }
+
     }
-    public static void RainbowSquare(int size, Color color, Graphics smg) {
-        smg.setColor(color);
-        smg.fillRect(WIDTH/2-size/2, HEIGHT/2-size/2, size, size);
+    public static void CenterDrawer(int x1, int y1, Graphics smg) {
+        smg.drawLine(x1,y1, WIDTH/2, HEIGHT/2 );
+
     }
 
     // Don't touch the code below
