@@ -1,4 +1,4 @@
-public class Bunny2 {
+public class Bunnyy2 {
     public static void main(String[] args) {
         int bunnies = 3;
         System.out.println(NumberOfEars(bunnies));
