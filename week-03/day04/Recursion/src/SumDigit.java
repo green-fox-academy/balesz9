@@ -1,5 +1,5 @@
 public class SumDigit {
-    public static void main(String1[] args) {
+    public static void main(String[] args) {
         int sumOfDigits = sumOfDigits(123);
         System.out.println(sumOfDigits);
     }
