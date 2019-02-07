@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 
 // Recommended naming of the class:
-// [NameOfTheClassUnderTest + Tests]
+// [NameOfTheClassUnderTest + ApplesTest]
 public class CalculatorPreparedTest {
 
     // Recommended naming of the test method:
