@@ -10,32 +10,32 @@ public class Circles {
 
     public static void mainDraw(Graphics graphics) {
 
-        drawCircles(graphics,WIDTH/2,HEIGHT/2, 600);
+        drawCircles(graphics,WIDTH/2,HEIGHT/2, 300);
         //drawConcentricCircle(WIDTH/2,HEIGHT/2,600,graphics);
 
-
     }
-    public static void drawCircles(Graphics graphics, int xMid, int yMid, int d) {
+    public static void drawCircles(Graphics graphics, int x, int y, int r) {
         // end recursion
-        int secondCircleX = (int)((2-Math.sqrt(3))/4*(d/2));
-        if(d < 5)
+        int secondCircleX = (int)((2-Math.sqrt(3))/4*(r));
+        if(r < 5)
             return;
+
 
         // Draw circle
 
-        graphics.drawOval(xMid - d/4, yMid-d/2, d/2 , d/2);
-        graphics.drawOval(xMid - secondCircleX, yMid -d/8, d/2, d/2);
-        graphics.drawOval(xMid - d/2+secondCircleX, yMid -d/8, d/2 , d/2);
+        graphics.drawOval(x - r/2, y-r, r , r);
+        graphics.drawOval(x - secondCircleX, y -r/4, r, r);
+        graphics.drawOval(x - r+secondCircleX, y -r/4, r , r);
 
 
 
         // start recursion
         //top
-        drawCircles(graphics, xMid , yMid - d, d / 2);
-        //left
-        drawCircles(graphics, xMid +d/2-secondCircleX, yMid + d/2- d/8, d / 2);
+        drawCircles(graphics, x -r/2, y , r / 2);
+        /*//left
+        drawCircles(graphics, x +d/2-secondCircleX, y + d/2- d/8, d / 2);
         //right
-        drawCircles(graphics, xMid -+secondCircleX, yMid+d-d / 8, d/2);
+        drawCircles(graphics, x -+secondCircleX, y+d-d / 8, d/2);*/
     }
 
     // Don't touch the code below
