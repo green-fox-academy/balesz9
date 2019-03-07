@@ -19,7 +19,7 @@ public class HelloRESTControllerFromURL {
 
     @GetMapping(value="/greeting")
     public static Greeting greeting(@RequestParam String name){
-        return new Greeting(id.getAndIncrement(),"Hello," + name + " !");
+        return new Greeting(id.getAndAdd(1),"Hello," + name + " !");
     }
 }
 

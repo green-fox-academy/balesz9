@@ -3,15 +3,16 @@ package com.greenfoxacademy.springstart.controllers;
 import com.greenfoxacademy.springstart.Greeting;
 import com.greenfoxacademy.springstart.SpringstartApplication;
 import org.springframework.boot.SpringApplication;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloRESTController {
+public class HelloWebController {
 
-    @RequestMapping(value="/greeting")
-    public static Greeting greeting(){
-        Greeting greeting = new Greeting(1,"Hello, world!");
-        return greeting;
+    @RequestMapping("/web/greeting")
+    public String greeting(Model model) {
+        model.addAttribute("name", " World");
+        return "greeting";
     }
 }
