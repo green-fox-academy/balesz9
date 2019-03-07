@@ -1,0 +1,34 @@
+.body {
+    background: lightblue;
+    align-items: center;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+  }
+
+  td {
+    border: 3px solid #999;
+  }
+  td, th {
+    text-align: left;
+    font-size: 200%;
+    font-family: 'Roboto', sans-serif;
+
+  }
+
+  th {
+    background: black;
+    color: grey;
+    font-style: normal;
+  }
+
+  tr:nth-child(odd) {
+    background: #eee;
+  }
+
+  tr:nth-child(even) {
+    background: lightgrey;
+  }
