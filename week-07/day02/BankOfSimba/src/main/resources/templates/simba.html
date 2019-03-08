@@ -8,9 +8,9 @@
 
 <div>
     <div>
-        <h1 th:text="'Account owner: '+${simbaAccount.name}"></h1>
-        <h1 th:text="'Account balance: ' +${simbaAccount.balance}+' USD'" ></h1>
-        <h1 th:text="'Account owner type: ' + ${simbaAccount.animalType}"></h1>
+        <p th:text="'Account owner: '+${simbaAccount.name}"></p>
+        <p th:text="'Account balance: ' +${#numbers.formatDecimal(simbaAccount.balance, 0, 'COMMA', 2, 'POINT')}+' USD'" ></p>
+        <p th:text="'Account owner type: ' + ${simbaAccount.animalType}"></p>
     </div>
 
 </div>

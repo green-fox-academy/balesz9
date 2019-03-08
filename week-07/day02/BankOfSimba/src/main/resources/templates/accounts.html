@@ -5,13 +5,24 @@
     <title>Bank Account</title>
 </head>
 <body>
-
-<div>
-    <li th:each="bankAccount : ${bankAccounts}">
-        <h1 th:text="'Account owner:'+${bankAccount.name}"></h1>
-        <h1 th:text="'Account balance: ' +${bankAccount.balance}+'USD'" ></h1>
-        <h1 th:text="'Account owner type: ' + ${bankAccount.animalType}"></h1>
-    </li>>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Account owner</th>
+                <th>Balance</th>
+                <th>Animal type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="bankAccount : ${bankAccounts}">
+            <tr>
+                <td th:text="${bankAccount.name}">Account owner name</td>
+                <td th:text="${bankAccount.balance}+' USD'" >Account balance</td>
+                <td th:text="${bankAccount.animalType}">Account owner type</td>
+        </th:block>
+        </tbody>
+    </table>
 
 </div>
 
