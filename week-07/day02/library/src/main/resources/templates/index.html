@@ -10,6 +10,7 @@
     <div th:each="book : ${books}" >
         <h1 th:text="${book.author} + ' - ' +${book.title} + ' (' + ${book.releaseYear} + ') '"></h1>
     </div>
+    <a href="/books/add">Add more books!</a>
 </div>
 
 </body>
