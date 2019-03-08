@@ -9,6 +9,7 @@
     <table>
         <thead>
             <tr>
+                <th>Index</th>
                 <th>Account owner</th>
                 <th>Balance</th>
                 <th>Animal type</th>
@@ -17,6 +18,7 @@
         <tbody>
         <th:block th:each="bankAccount : ${bankAccounts}">
             <tr>
+                <td th:text="${bankAccountStat.index}+1">Index</td>
                 <td th:text="${bankAccount.name}">Account owner name</td>
                 <td th:text="${bankAccount.balance}+' USD'" >Account balance</td>
                 <td th:text="${bankAccount.animalType}">Account owner type</td>
