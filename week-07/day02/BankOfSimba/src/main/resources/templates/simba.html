@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Account</title>
+</head>
+<body>
+
+<div>
+    <div>
+        <h1 th:text="'Account owner:'+${simbaAccount.name}"></h1>
+        <h1 th:text="'Account balance: ' +${simbaAccount.balance}+'USD'" ></h1>
+        <h1 th:text="'Account owner type: ' + ${simbaAccount.animalType}"></h1>
+    </div>>
+
+</div>
+
+</body>
+</html>
