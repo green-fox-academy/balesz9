@@ -7,11 +7,11 @@
 <body>
 
 <div>
-    <div th:each="bankAccount : ${bankAccounts}">
+    <li th:each="bankAccount : ${bankAccounts}">
         <h1 th:text="'Account owner:'+${bankAccount.name}"></h1>
         <h1 th:text="'Account balance: ' +${bankAccount.balance}+'USD'" ></h1>
         <h1 th:text="'Account owner type: ' + ${bankAccount.animalType}"></h1>
-    </div>>
+    </li>>
 
 </div>
 

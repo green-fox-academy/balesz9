@@ -12,18 +12,24 @@ import java.util.List;
 @Controller
 public class BankOfSimbaController {
 
-    private BankAccount simbaAccount = new BankAccount("Simba",2000, "lion");
+    private BankAccount simbaAccount = new BankAccount("Simba",2000.15, "lion");
 
     private List<BankAccount> bankAccounts = new ArrayList<>();
 
     public BankOfSimbaController() {
-        bankAccounts.add(new BankAccount("Simba", 2000, "lion"));
+        bankAccounts.add(new BankAccount("Simba", 2000.00, "lion"));
     }
 
-    @RequestMapping(path = "/show", method = RequestMethod.GET)
+    @RequestMapping(path = "/simba", method = RequestMethod.GET)
     public String showBankAccount(Model model) {
         model.addAttribute("simbaAccount", simbaAccount);
         return "simba";
+    }
+
+    @RequestMapping(path = "/html", method = RequestMethod.GET)
+    public String showString(Model model) {
+        model.addAttribute("string","This is an <em>HTML</em> text. <b>Enjoy yourself!</b>" );
+        return "html";
     }
 
 
