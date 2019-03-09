@@ -17,7 +17,7 @@
         </thead>
         <tbody>
         <th:block th:each="bankAccount : ${bankAccounts}">
-            <tr>
+            <tr th:style="${bankAccount.isKing() == true ? 'color: yellow;' : 'color: black;'}">
                 <td th:text="${bankAccountStat.index}+1">Index</td>
                 <td th:text="${bankAccount.name}">Account owner name</td>
                 <td th:text="${bankAccount.balance}+' USD'" >Account balance</td>

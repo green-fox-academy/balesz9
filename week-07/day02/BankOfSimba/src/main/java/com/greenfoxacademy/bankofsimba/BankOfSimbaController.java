@@ -12,16 +12,16 @@ import java.util.List;
 @Controller
 public class BankOfSimbaController {
 
-    private BankAccount simbaAccount = new BankAccount("Simba",2000.00, "lion");
+    private BankAccount simbaAccount = new BankAccount("Simba",2000.00, "lion", true);
 
     private List<BankAccount> bankAccounts = new ArrayList<>();
 
     public BankOfSimbaController() {
-        bankAccounts.add(new BankAccount("Simba", 2000.00, "lion"));
-        bankAccounts.add(new BankAccount("Timon", 5000.00, "meerkat"));
-        bankAccounts.add(new BankAccount("Pumba", 3000.00, "warthog"));
-        bankAccounts.add(new BankAccount("Rafiki", 2000.00, "mandrill"));
-        bankAccounts.add(new BankAccount("Zazu", 2000.00, "hornbill"));
+        bankAccounts.add(new BankAccount("Simba", 2000.00, "lion",true));
+        bankAccounts.add(new BankAccount("Timon", 5000.00, "meerkat",false));
+        bankAccounts.add(new BankAccount("Pumba", 3000.00, "warthog",false));
+        bankAccounts.add(new BankAccount("Rafiki", 2000.00, "mandrill",false));
+        bankAccounts.add(new BankAccount("Zazu", 2000.00, "hornbill",false));
     }
 
     @RequestMapping(path = "/simba", method = RequestMethod.GET)
