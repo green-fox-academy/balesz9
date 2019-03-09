@@ -13,6 +13,7 @@
                 <th>Account owner</th>
                 <th>Balance</th>
                 <th>Animal type</th>
+                <th>Bad or Good Guy</th>>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,11 @@
                 <td th:text="${bankAccount.name}">Account owner name</td>
                 <td th:text="${bankAccount.balance}+' USD'" >Account balance</td>
                 <td th:text="${bankAccount.animalType}">Account owner type</td>
+                <td th:switch="${bankAccount.isBadGuy()}">
+                    <span th:case = "true" th:text="'Bad Guy'"></span>
+                    <span th:case = "false" th:text="'Good guy'"></span>
+                    </td>
+
         </th:block>
         </tbody>
     </table>
