@@ -13,7 +13,7 @@
         <th>Age</th>
         <th>Gender</th>
     </tr>
-    <tr th:each="inhabitant : ${inhabitants}">
+    <tr th:each="inhabitant : ${inhabitantList}">
         <td th:text = "${inhabitant.id}"></td>
         <td th:text = "${inhabitant.name}"></td>
         <td th:text = "${inhabitant.age}"></td>
