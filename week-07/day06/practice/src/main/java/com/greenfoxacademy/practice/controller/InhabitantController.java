@@ -42,7 +42,7 @@ public class InhabitantController {
         if (inhabitant != null) {
             model.addAttribute("inhabitant_by_id",inhabitant );
         } else {
-            model.addAttribute("error", "No inhabitant found");
+            model.addAttribute("error", "No inhabitant found by this id.");
         }
 
         return "inhabitant_id";

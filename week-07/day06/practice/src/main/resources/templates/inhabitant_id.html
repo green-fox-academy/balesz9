@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inhabitant details by Id/title>
+    <title>Inhabitant details by Id</title>
 </head>
 <body>
 <span th:if="${error}" th:text="${error}" ></span>
 <div th:unless="${error}" th:object="${inhabitant_by_id}">
-    <h1 th:text="*{name}"></h1>
+    <h1 th:text="*{name}"></h1> //*-hoz kell egy th:object
     <h1 th:text="*{age}"></h1>
     <h1 th:text="*{gender}"></h1>
 </div>
