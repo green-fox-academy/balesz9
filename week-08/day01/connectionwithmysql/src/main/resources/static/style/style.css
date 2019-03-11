@@ -1,0 +1,12 @@
+table {
+    border-collapse: collapse;
+    text-align: left;
+    border: 3px solid #999;
+}
+
+td, th{
+    border: 3px solid #999;
+}
+
+
+
