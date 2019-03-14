@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Random;
 
-@Service
+@Service (value = "Utility Service")
 public class UtilityService {
     ArrayList<String> colors;
     Random random;
@@ -22,5 +22,13 @@ public class UtilityService {
 
     public String randomColor() {
         return colors.get(random.nextInt(colors.size()));
+    }
+
+    public boolean emailValidate(String email){
+        if (email.contains("@") && email.contains(".")){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
