@@ -1,4 +1,4 @@
-package com.greenfoxacademy.bankofsimba;
+package com.greenfoxacademy.bankofsimba.Controller;
 
 import com.greenfoxacademy.bankofsimba.model.BankAccount;
 import org.springframework.stereotype.Controller;
