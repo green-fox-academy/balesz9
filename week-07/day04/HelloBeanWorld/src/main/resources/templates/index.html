@@ -9,12 +9,24 @@
 <h1>Useful things</h1>
 <ol>
     <li><a href="/useful/colored">Colored background</a></li>
-    <a>Validate an e-mail</a>
-    <li><form method="POST" action="/useful/email">
-        <input type="text" placeholder="type your e-mail" name = "email">
-        <input type="submit" value="Send" name = "validate">
+
+    <li>
+        <a>Validate an e-mail</a>
+        <form method="POST" action="/useful/email">
+            <input type="text" placeholder="type your e-mail" name = "email">
+            <input type="submit" value="Send" name = "validate">
     </form>
     </li>
+    <li>
+        <a>Encode a text</a>
+        <form method="POST" action="/useful/encoder">
+        <input type="text" placeholder="type your text" name = "text">
+        <input type="number" name="shift">
+        <input type="submit" value="Send" name = "caesar">
+        </form>
+    </li>
+
+
 </ol>
 </body>
 </html>

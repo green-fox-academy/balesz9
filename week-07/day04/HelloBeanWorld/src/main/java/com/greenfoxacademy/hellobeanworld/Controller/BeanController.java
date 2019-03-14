@@ -44,4 +44,11 @@ public class BeanController {
         return "email_validation";
     }
 
+    @PostMapping(value="useful/encoder")
+    public String encoder(Model model, @RequestParam("text") String text, @RequestParam("shift") int shift){
+        model.addAttribute("encoded", utilityService.caesar(text, shift));
+        return "encoder";
+    }
+
+
 }
