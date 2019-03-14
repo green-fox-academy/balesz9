@@ -50,5 +50,11 @@ public class BeanController {
         return "encoder";
     }
 
+    @PostMapping(value="useful/decoder")
+    public String decoder(Model model, @RequestParam("text") String text, @RequestParam("shift") int shift){
+        model.addAttribute("decoded", utilityService.caesar(text, -shift));
+        return "decoder";
+    }
+
 
 }
