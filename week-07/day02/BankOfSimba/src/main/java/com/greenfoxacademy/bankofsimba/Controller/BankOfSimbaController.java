@@ -3,8 +3,7 @@ package com.greenfoxacademy.bankofsimba.Controller;
 import com.greenfoxacademy.bankofsimba.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,12 +35,29 @@ public class BankOfSimbaController {
         return "html";
     }
 
+    @ModelAttribute(value = "bankaccount")
+    public BankAccount addAccount() {
+        return new BankAccount();
+    }
 
     @RequestMapping(path = "/accounts", method = RequestMethod.GET)
-    public String showBankAccounts(Model model) {
+    public String showBankAccounts(Model model, @ModelAttribute(name="newBankAccount") BankAccount bankAccount) {
         model.addAttribute("bankAccounts", bankAccounts);
+        model.addAttribute("newBankAccount", new BankAccount());
         return "accounts";
     }
 
+    @PostMapping("/raise")
+    public String raiseAccountBalance(Model model, @RequestParam("index") Integer index) {
+        this.bankAccounts.get(index).raiseBalance();
+        model.addAttribute("bankAccounts", this.bankAccounts);
+        return "accounts";
+    }
+
+   @PostMapping("/add")
+    public  String addNewAccounts( BankAccount newBankAccount){
+        bankAccounts.add(newBankAccount);
+        return "redirect:/accounts";
+    }
 
 }
