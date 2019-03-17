@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Green Fox Club</title>
@@ -9,7 +8,23 @@
 <body>
 <li>Infomation</li>
 <img src="greenfox.png" alt="greenfox">
-<p th:text="'This is ' + ${name_index} + '. Currently living on pizza and lemonade. He knows 2 trick.'"></p>
+<!--<p th:text="'This is ' + ${name_index} + '. Currently living on pizza and lemonade. He knows 2 trick.'"></p>-->
+<div>
+<span th:if="${error}" th:text="${error}" ></span>
+<p th:if="${fox} != null" th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and '
+        + ${fox.getDrink()} + '. He knows ' + ${fox.getNumberOfTricks()} + ' tricks.'"></p>
+
+</div>
+<div>
+    <h1>Known tricks:</h1>
+    <ul th:if="${fox.getNumberOfTricks() != 0}">
+        <li th:each="trick : ${fox.getTricks()}"
+        th:text = "${trick.toString()}"></li>
+    </ul>
+    <ul th:if="${fox.getNumberOfTricks() == 0}">
+        <li>Yoo know no tricks yet. Go and learn some.</li>
+
+
 </div>
 </body>
 </html>

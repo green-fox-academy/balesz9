@@ -13,6 +13,11 @@ public class FoxListService {
     public List<Fox> getFoxList() {
         return foxList;
     }
+
+    public void addFox(Fox fox){
+        foxList.add(fox);
+    }
+
     public FoxListService() {
         this.foxList = new ArrayList<>();
         initializeList();
@@ -21,10 +26,14 @@ public class FoxListService {
     public void initializeList(){
         foxList.add(new Fox("Bela", new ArrayList<Trick>(){{
             add(Trick.program);
+            add(Trick.backflip);
         }},Food.pizza, Drink.rum ));
         foxList.add(new Fox("Mulder", new ArrayList<Trick>(){{
             add(Trick.fly);
+            add(Trick.sing);
         }},Food.pizza, Drink.rum ));
+        foxList.add(new Fox("Scully", new ArrayList<Trick>(){
+        },Food.pizza, Drink.rum ));
     }
 
     public Fox selectFoxByName (String name){
@@ -39,9 +48,7 @@ public class FoxListService {
 
 
 
-    public void addFox(Fox fox){
-        foxList.add(fox);
-    }
+
 
 
 

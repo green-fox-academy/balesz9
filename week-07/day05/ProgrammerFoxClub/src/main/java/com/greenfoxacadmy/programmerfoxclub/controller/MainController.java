@@ -25,14 +25,14 @@ public class MainController {
 
     @RequestMapping(path = "/", method = RequestMethod.GET )
     public String getFoxByName(Model model, @RequestParam(value = "name" ,required = false, defaultValue = "Mr. Fox") String name){
-        model.addAttribute("name_index", name);
-       /* Fox fox = foxListService.selectFoxByName(name);
+        //model.addAttribute("name_index", name);
+       Fox fox = foxListService.selectFoxByName(name);
 
         if (fox != null) {
-            model.addAttribute("fox_by_name",fox );
+            model.addAttribute("fox",fox );
         } else {
             model.addAttribute("error", "No fox found by this name.");
-        }*/
+        }
         return "index";
     }
 
