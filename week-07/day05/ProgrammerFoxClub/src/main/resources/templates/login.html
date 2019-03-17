@@ -8,9 +8,9 @@
 <body>
 <h1>Welcome to Programmer Fox Club</h1>
 <p>Please, provide a name so you can associate to your pet. </p>
-<form action="#"  th:action="@{/login}" th:object="${newFox}" th:method="post">
-    <label for='name'>Name</label>
-    <input id='name' name='name' type='text' th:field="*{name}" required>/>
+<form action="#"  th:action="@{/login}" th:method="post">
+    <label for='nameInputField'>Name</label>
+    <input id='nameInputField' name='loginName' type='text' placeholder="Type a name!" required>
     <button>Go</button>
 </form>
 </body>

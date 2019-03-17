@@ -10,13 +10,40 @@ public class FoxListService {
 
     private List<Fox> foxList;
 
+    public List<Fox> getFoxList() {
+        return foxList;
+    }
     public FoxListService() {
         this.foxList = new ArrayList<>();
         initializeList();
     }
 
     public void initializeList(){
+        foxList.add(new Fox("Bela", new ArrayList<Trick>(){{
+            add(Trick.program);
+        }},Food.pizza, Drink.rum ));
+        foxList.add(new Fox("Mulder", new ArrayList<Trick>(){{
+            add(Trick.fly);
+        }},Food.pizza, Drink.rum ));
     }
+
+    public Fox selectFoxByName (String name){
+
+        for(Fox fox : foxList) {
+            if (fox.getName().equals(name)) {
+                return fox;
+            }
+        }
+        return null;
+    }
+
+
+
+    public void addFox(Fox fox){
+        foxList.add(fox);
+    }
+
+
 
 
 

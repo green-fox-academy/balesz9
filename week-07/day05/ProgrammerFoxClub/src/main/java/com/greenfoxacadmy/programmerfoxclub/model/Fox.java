@@ -5,15 +5,21 @@ import java.util.List;
 public class Fox {
 
     private String name;
-    private List<String> tricks;
+    private List<Trick> tricks;
     private Food food;
     private Drink drink;
 
-    public Fox(String name, List<String> tricks, Food food, Drink drink) {
+    public Fox(String name, List<Trick> tricks, Food food, Drink drink) {
         this.name = name;
         this.tricks = tricks;
         this.food = food;
         this.drink = drink;
+    }
+    public Fox(String name){
+        this.name = name;
+        this.tricks = null;
+        this.food = null;
+        this.drink = null;
     }
 
     public String getName() {
@@ -24,12 +30,19 @@ public class Fox {
         this.name = name;
     }
 
-    public List<String> getTricks() {
+    public List<Trick> getTricks() {
         return tricks;
     }
 
-    public void setTricks(List<String> tricks) {
+    public void setTricks(List<Trick> tricks) {
         this.tricks = tricks;
+    }
+
+    public int getNumberOfTricks(){
+        if (this.tricks == null){
+            return 0;
+        }
+        return this.tricks.size();
     }
 
     public Food getFood() {
