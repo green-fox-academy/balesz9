@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loign</title>
+</head>
+<body>
+<h1>Welcome to Programmer Fox Club</h1>
+<p>Please, provide a name so you can associate to your pet. </p>
+<form action="#"  th:action="@{/login}" th:object="${newFox}" th:method="post">
+    <label for='name'>Name</label>
+    <input id='name' name='name' type='text' th:field="*{name}" required>/>
+    <button>Go</button>
+</form>
+</body>
+</html>
