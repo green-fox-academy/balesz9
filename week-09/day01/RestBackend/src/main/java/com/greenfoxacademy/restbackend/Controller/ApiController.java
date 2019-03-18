@@ -1,9 +1,11 @@
 package com.greenfoxacademy.restbackend.Controller;
 
+import com.greenfoxacademy.restbackend.Model.Append;
 import com.greenfoxacademy.restbackend.Model.CustomError;
 import com.greenfoxacademy.restbackend.Model.Doubling;
 import com.greenfoxacademy.restbackend.Model.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +30,10 @@ public class ApiController {
         } else if (name == null) {
             return new CustomError("Please provide a name!");
         } else return new CustomError("Please provide a title!");
+    }
+
+    @GetMapping(value = "/appenda/{appendable}")
+    public Object AppendingA(@PathVariable(name="appendable") String appendable){
+        return new Append(appendable);
     }
 }
