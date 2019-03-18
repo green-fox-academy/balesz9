@@ -1,13 +1,9 @@
 package com.greenfoxacademy.restbackend.Controller;
 
-import com.greenfoxacademy.restbackend.Model.Append;
-import com.greenfoxacademy.restbackend.Model.CustomError;
-import com.greenfoxacademy.restbackend.Model.Doubling;
-import com.greenfoxacademy.restbackend.Model.Greeting;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.greenfoxacademy.restbackend.Model.*;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 public class ApiController {
@@ -22,7 +18,7 @@ public class ApiController {
     }
 
     @GetMapping(value = "/greeter")
-    public Object Greeting(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "title", required = false) String title) {
+    public Object greeting(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "title", required = false) String title) {
         if (name != null && title != null) {
             return new Greeting("Oh, hi there " + name + ", my dear " + title + "!");
         } else if (name == null && title == null) {
@@ -33,7 +29,19 @@ public class ApiController {
     }
 
     @GetMapping(value = "/appenda/{appendable}")
-    public Object AppendingA(@PathVariable(name="appendable") String appendable){
+    public Object appendingA(@PathVariable(name = "appendable", required = false) String appendable) {
         return new Append(appendable);
     }
+
+    @PostMapping("dountil/{action}")
+    public Object returnDoUntil(@PathVariable("action") String action, @RequestBody(required = false) Map<String, Integer> until) {
+        DoUntil doUntil = new DoUntil();
+        if (until == null) {
+            return new CustomError("Please provide a number!");
+        } else {
+            doUntil.setResult(action, until.get("until"));
+            return doUntil;
+        }
+    }
 }
+
