@@ -24,11 +24,11 @@ public class ApiController {
 
     @GetMapping(value = "/greeter")
     public Object greeting(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "title", required = false) String title) {
-        if (name != null && title != null) {
+        if ((name != null && name.length()>0)   && (title != null && title.length()>0) ) {
             return new Greeting("Oh, hi there " + name + ", my dear " + title + "!");
-        } else if (name == null && title == null) {
+        } else if ((name == null || name.length()== 0 )&& (title == null|| title.length() == 0 )) {
             return new CustomError("Please provide a name and a title!");
-        } else if (name == null) {
+        } else if (name == null || name.length()==0) {
             return new CustomError("Please provide a name!");
         } else return new CustomError("Please provide a title!");
     }
