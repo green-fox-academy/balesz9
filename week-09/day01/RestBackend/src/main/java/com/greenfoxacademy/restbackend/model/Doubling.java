@@ -1,4 +1,4 @@
-package com.greenfoxacademy.restbackend.Model;
+package com.greenfoxacademy.restbackend.model;
 
 public class Doubling {
     private int received;

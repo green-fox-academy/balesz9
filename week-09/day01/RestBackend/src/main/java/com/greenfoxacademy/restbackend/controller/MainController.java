@@ -1,4 +1,4 @@
-package com.greenfoxacademy.restbackend.Controller;
+package com.greenfoxacademy.restbackend.controller;
 
 
 import org.springframework.stereotype.Controller;

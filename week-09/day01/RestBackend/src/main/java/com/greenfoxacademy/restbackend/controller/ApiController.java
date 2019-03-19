@@ -1,12 +1,17 @@
-package com.greenfoxacademy.restbackend.Controller;
+package com.greenfoxacademy.restbackend.controller;
 
-import com.greenfoxacademy.restbackend.Model.*;
+import com.greenfoxacademy.restbackend.model.*;
+import com.greenfoxacademy.restbackend.service.MyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 public class ApiController {
+
+    @Autowired
+    private MyService service;
 
     @GetMapping(value = "/doubling")
     public Object doubling(@RequestParam(value = "input", required = false) Integer input) {
@@ -43,5 +48,19 @@ public class ApiController {
             return doUntil;
         }
     }
+
+    @PostMapping("arrays")
+    public Object returnHandler(@RequestBody(required = false) ArrayObject arrayObject) {
+        if (arrayObject.getNumbers()== null){
+            return new CustomError("Please provide a number!");
+        } else if (arrayObject.getWhat().equals("sum")){
+            return service.sumOfNumbers(arrayObject.getNumbers());
+        } else if (arrayObject.getWhat().equals("multiply")){
+            return service.multiplyNumbers(arrayObject.getNumbers());
+        } else if (arrayObject.getWhat().equals("double")){
+            return service.doubleNumbers(arrayObject.getNumbers());
+        } return new CustomError("Please provide what to do with numbers.");
+    }
 }
+
 
