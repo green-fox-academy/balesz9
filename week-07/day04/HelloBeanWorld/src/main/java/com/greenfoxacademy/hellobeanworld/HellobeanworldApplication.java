@@ -19,7 +19,7 @@ public class HellobeanworldApplication implements CommandLineRunner {
     private MyColor color;
 
     @Autowired
-    HellobeanworldApplication (@Qualifier("Blue Color")MyColor color){
+    HellobeanworldApplication (@Qualifier("Red Color")MyColor color){
         this.color = color;
     }
 
