@@ -58,10 +58,10 @@
     <input type="text" name="type" id="type" th:field="*{animalType}" required>
     <br>
     <label for="king">Is he king?:</label>
-    <input type="checkbox" name="king" id="king" th:field="*{king}" required>
+    <input type="checkbox" name="king" id="king" th:field="*{king}">
     <br>
     <label for="isGoodGuy">Good guy</label>
-    <input type="radio" id="isGoodGuy" th:field="*{badGuy}" th:value="false"/>
+    <input type="radio" id="isGoodGuy" th:field="*{badGuy}" th:value="false" checked/>
     <label for="badGuy">Bad guy</label>
     <input type="radio" id="badGuy" th:field="*{badGuy}" th:value="true"/>
     <br>

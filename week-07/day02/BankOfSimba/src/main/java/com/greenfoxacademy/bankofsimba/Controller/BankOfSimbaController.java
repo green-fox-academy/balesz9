@@ -35,10 +35,6 @@ public class BankOfSimbaController {
         return "html";
     }
 
-    @ModelAttribute(value = "bankaccount")
-    public BankAccount addAccount() {
-        return new BankAccount();
-    }
 
     @RequestMapping(path = "/accounts", method = RequestMethod.GET)
     public String showBankAccounts(Model model, @ModelAttribute(name="newBankAccount") BankAccount bankAccount) {
@@ -51,11 +47,16 @@ public class BankOfSimbaController {
     public String raiseAccountBalance(Model model, @RequestParam("index") Integer index) {
         this.bankAccounts.get(index).raiseBalance();
         model.addAttribute("bankAccounts", this.bankAccounts);
-        return "accounts";
+        return "redirect:/accounts";
     }
 
-   @PostMapping("/add")
-    public  String addNewAccounts( BankAccount newBankAccount){
+    @ModelAttribute(value = "newBankAccount")
+    public BankAccount addAccount() {
+        return new BankAccount();
+    }
+
+    @PostMapping("/add")
+    public  String addNewAccounts(BankAccount newBankAccount){
         bankAccounts.add(newBankAccount);
         return "redirect:/accounts";
     }
