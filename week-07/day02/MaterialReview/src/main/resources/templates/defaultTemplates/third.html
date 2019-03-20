@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Developer resources page</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css">
+</head>
+<body>
+<!-- Display "No resources found" if no resources found -->
+<span th:if="${resources.length == 0}" > No resources found.</span>
+
+<div>
+    <div>
+        <!- Take every item from resources and get href and text accordingly ->
+        <!- Object Graph Notation Language: resource.name, resource.url ->
+        <!- uses getters (getUrl, getName) ->
+        <a th:each="resource : ${resources}"
+           th:href="${resource.url}">
+            <span th:text="|${resource.name}     |"/>
+        </a>
+
+        <!-- Display the name of the first resource -->
+        <!-- use th:with -->
+        <div th:with="firstResource=${resources[0]}">
+            <p>
+                The name of the first resource is <span th:text="${firstResource.name}"/>.
+            </p>
+        </div>
+
+        <!--Link expression example -->
+        <div th:with="second=${resources[1]}">
+            <a th:href="@{/requestParam(id=222,name=${second.name})}">Go to default page</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

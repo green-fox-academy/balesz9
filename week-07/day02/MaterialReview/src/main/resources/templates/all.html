@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>All pages</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css">
+</head>
+<body>
+<div>
+    <h2>Default templates</h2>
+    <a th:href="@{/first}">First</a>
+    <a th:href="@{/second}">Second</a>
+    <a th:href="@{/third}">Third</a>
+    <a th:href="@{/requestParam(id=222,name='Arya Stark')}">RequestParam with id and name</a>
+    <a th:href="@{'/pathVariable/' + ${id} + '/and/' + ${name}}">PathVariable with id and name</a>
+    <a th:href="@{/conditions}">Conditions</a><br>
+
+    <h2>Greeting template</h2>
+    <a th:href="@{/greeting}">Greeting</a>
+</div>
+</body>
+</html>

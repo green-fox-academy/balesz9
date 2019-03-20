@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Conditions page</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css">
+</head>
+<body>
+<div>
+    <p><b>First attribute (Google) is Viki?</b></p>
+    <p th:text="${first.name == 'Wiki'} ? 'This is Viki' : 'This is not Viki!'"/>
+
+    <p><b>Second attribute (Stackoverflow) is recommended? </b></p>
+    <!--If-->
+    <p th:if="${second.recommended}">This one is recommended</p>
+    <!--Else-->
+    <p th:unless="${first.isRecommended()}">This one is not recommended</p>
+    <p th:if="${not first.isRecommended()}">This one is not recommended again</p>
+
+    <p><b>Third attribute (W3Schools) is recommended? </b></p>
+    <!--If-->
+    <p th:if="${third.isRecommended()}">This one is recommended</p>
+    <!--Else-->
+    <p th:unless="${third.isRecommended()}">This one is not recommended</p>
+    <p th:if="${not third.isRecommended()}">This one is not recommended again</p>
+
+
+    <p><b>Third attribute's (W3Schools) nickname: </b></p>
+    <p th:switch="${third.getName()}">
+        <span th:case="'Google'">Guglee</span>
+        <span th:case="'Viki'">Vikiiii</span>
+        <span th:case="'W3Schools'">WeeThreee</span>
+        <span th:case="*">Does not have any</span>
+    </p>
+
+    <p><b>Fourth attribute's (Oracle) nickname: </b></p>
+    <p th:switch="${fourth.getName()}">
+        <span th:case="'Google'">Guglee</span>
+        <span th:case="'Viki'">Vikiiii</span>
+        <span th:case="'W3Schools'">WeeThreee</span>
+        <!--Default value-->
+        <span th:case="*">Does not have any</span>
+    </p>
+
+</div>
+</body>
+</html>

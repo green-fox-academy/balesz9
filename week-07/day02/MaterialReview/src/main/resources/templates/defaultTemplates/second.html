@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!- Namespaces to reach Thymeleaf objects (th, layout) ->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Formatting page</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css">
+</head>
+<body>
+<div>
+    <!- th:text  -  replace the content with the value in quotes  ->
+    <!- ${...}  -  value expression / model attributes ->
+    <!- ${formatted}  -  place the formatted attribute into the content ->
+    <!- utext  -  do not escape the injected text  ->
+    <!-- formatted here is: <b>blue</b> -->
+    <span th:text="|Hello ${name} , did you know that|"/>
+    <span th:utext="${formatted}"/> is
+    <span th:text="${formatted}"/> in HTML?
+</div>
+<div>
+    <p>
+        <!-- ModelAttribute methods are invoked before the controller
+        methods annotated with @RequestMapping
+
+        You can add values in Model which will be identified as global.
+        This actually means that for every request a default value exists,
+        for every method in the response part. -->
+        <span th:text="'This comes from @ModelAttribute method: ' + ${msg}" />
+    </p>
+</div>
+
+</body>
+</html>
